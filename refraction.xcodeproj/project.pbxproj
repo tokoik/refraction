@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXApplicationTarget section */
+		7D39AFD20EFBB9A0003DDA48 /* refraction */ = {
+			isa = PBXApplicationTarget;
+			buildConfigurationList = 7D39AFD60EFBB9A1003DDA48 /* Build configuration list for PBXApplicationTarget "refraction" */;
+			buildPhases = (
+				7D39AFCD0EFBB9A0003DDA48 /* Headers */,
+				7D39AFCE0EFBB9A0003DDA48 /* Resources */,
+				7D39AFCF0EFBB9A0003DDA48 /* Sources */,
+				7D39AFD00EFBB9A0003DDA48 /* Frameworks */,
+				7D39AFD10EFBB9A0003DDA48 /* Rez */,
+			);
+			dependencies = (
+			);
+			name = refraction;
+			productInstallPath = "$(USER_APPS_DIR)";
+			productName = refraction;
+			productReference = 7D39AFD30EFBB9A0003DDA48 /* refraction.app */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string></string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string></string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1d1</string>
+</dict>
+</plist>
+";
+		};
+/* End PBXApplicationTarget section */
+
+/* Begin PBXBuildFile section */
+		7D39AFDA0EFBB9BF003DDA48 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D39AFD90EFBB9BF003DDA48 /* GLUT.framework */; };
+		7D39AFDE0EFBB9CD003DDA48 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D39AFDD0EFBB9CD003DDA48 /* OpenGL.framework */; };
+		7D39AFE20EFBB9DB003DDA48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D39AFE10EFBB9DB003DDA48 /* Foundation.framework */; };
+		7D39AFE90EFBB9F2003DDA48 /* aberration.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFE50EFBB9F2003DDA48 /* aberration.frag */; };
+		7D39AFEA0EFBB9F2003DDA48 /* aberration.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFE60EFBB9F2003DDA48 /* aberration.vert */; };
+		7D39AFEB0EFBB9F2003DDA48 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39AFE70EFBB9F2003DDA48 /* Box.cpp */; };
+		7D39AFEC0EFBB9F2003DDA48 /* Box.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39AFE80EFBB9F2003DDA48 /* Box.h */; };
+		7D39B0070EFBBA07003DDA48 /* bunny.obj in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFED0EFBBA07003DDA48 /* bunny.obj */; };
+		7D39B0080EFBBA07003DDA48 /* glsl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39AFEE0EFBBA07003DDA48 /* glsl.cpp */; };
+		7D39B0090EFBBA07003DDA48 /* glsl.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39AFEF0EFBBA07003DDA48 /* glsl.h */; };
+		7D39B00A0EFBBA07003DDA48 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39AFF00EFBBA07003DDA48 /* main.cpp */; };
+		7D39B00B0EFBBA07003DDA48 /* Obj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39AFF10EFBBA07003DDA48 /* Obj.cpp */; };
+		7D39B00C0EFBBA07003DDA48 /* Obj.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39AFF20EFBBA07003DDA48 /* Obj.h */; };
+		7D39B00D0EFBBA07003DDA48 /* reflect.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF30EFBBA07003DDA48 /* reflect.frag */; };
+		7D39B00E0EFBBA07003DDA48 /* reflect.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF40EFBBA07003DDA48 /* reflect.vert */; };
+		7D39B00F0EFBBA07003DDA48 /* refract.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF50EFBBA07003DDA48 /* refract.frag */; };
+		7D39B0100EFBBA07003DDA48 /* refract.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF60EFBBA07003DDA48 /* refract.vert */; };
+		7D39B0110EFBBA07003DDA48 /* replace.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF70EFBBA07003DDA48 /* replace.frag */; };
+		7D39B0120EFBBA07003DDA48 /* replace.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF80EFBBA07003DDA48 /* replace.vert */; };
+		7D39B0140EFBBA07003DDA48 /* room3nx.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFFA0EFBBA07003DDA48 /* room3nx.raw */; };
+		7D39B0160EFBBA07003DDA48 /* room3ny.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFFC0EFBBA07003DDA48 /* room3ny.raw */; };
+		7D39B0180EFBBA07003DDA48 /* room3nz.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFFE0EFBBA07003DDA48 /* room3nz.raw */; };
+		7D39B01A0EFBBA07003DDA48 /* room3px.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39B0000EFBBA07003DDA48 /* room3px.raw */; };
+		7D39B01C0EFBBA07003DDA48 /* room3py.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39B0020EFBBA07003DDA48 /* room3py.raw */; };
+		7D39B01E0EFBBA07003DDA48 /* room3pz.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39B0040EFBBA07003DDA48 /* room3pz.raw */; };
+		7D39B01F0EFBBA07003DDA48 /* Trackball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39B0050EFBBA07003DDA48 /* Trackball.cpp */; };
+		7D39B0200EFBBA07003DDA48 /* Trackball.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39B0060EFBBA07003DDA48 /* Trackball.h */; };
+		7DDCEAF31286430C004794D2 /* Box.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39AFE80EFBB9F2003DDA48 /* Box.h */; };
+		7DDCEAF41286430C004794D2 /* glsl.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39AFEF0EFBBA07003DDA48 /* glsl.h */; };
+		7DDCEAF51286430C004794D2 /* Obj.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39AFF20EFBBA07003DDA48 /* Obj.h */; };
+		7DDCEAF61286430C004794D2 /* Trackball.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D39B0060EFBBA07003DDA48 /* Trackball.h */; };
+		7DDCEAF81286430C004794D2 /* aberration.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFE50EFBB9F2003DDA48 /* aberration.frag */; };
+		7DDCEAF91286430C004794D2 /* aberration.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFE60EFBB9F2003DDA48 /* aberration.vert */; };
+		7DDCEAFA1286430C004794D2 /* bunny.obj in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFED0EFBBA07003DDA48 /* bunny.obj */; };
+		7DDCEAFB1286430C004794D2 /* reflect.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF30EFBBA07003DDA48 /* reflect.frag */; };
+		7DDCEAFC1286430C004794D2 /* reflect.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF40EFBBA07003DDA48 /* reflect.vert */; };
+		7DDCEAFD1286430C004794D2 /* refract.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF50EFBBA07003DDA48 /* refract.frag */; };
+		7DDCEAFE1286430C004794D2 /* refract.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF60EFBBA07003DDA48 /* refract.vert */; };
+		7DDCEAFF1286430C004794D2 /* replace.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF70EFBBA07003DDA48 /* replace.frag */; };
+		7DDCEB001286430C004794D2 /* replace.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFF80EFBBA07003DDA48 /* replace.vert */; };
+		7DDCEB011286430C004794D2 /* room3nx.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFFA0EFBBA07003DDA48 /* room3nx.raw */; };
+		7DDCEB021286430C004794D2 /* room3ny.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFFC0EFBBA07003DDA48 /* room3ny.raw */; };
+		7DDCEB031286430C004794D2 /* room3nz.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39AFFE0EFBBA07003DDA48 /* room3nz.raw */; };
+		7DDCEB041286430C004794D2 /* room3px.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39B0000EFBBA07003DDA48 /* room3px.raw */; };
+		7DDCEB051286430C004794D2 /* room3py.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39B0020EFBBA07003DDA48 /* room3py.raw */; };
+		7DDCEB061286430C004794D2 /* room3pz.raw in Resources */ = {isa = PBXBuildFile; fileRef = 7D39B0040EFBBA07003DDA48 /* room3pz.raw */; };
+		7DDCEB081286430C004794D2 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39AFE70EFBB9F2003DDA48 /* Box.cpp */; };
+		7DDCEB091286430C004794D2 /* glsl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39AFEE0EFBBA07003DDA48 /* glsl.cpp */; };
+		7DDCEB0A1286430C004794D2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39AFF00EFBBA07003DDA48 /* main.cpp */; };
+		7DDCEB0B1286430C004794D2 /* Obj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39AFF10EFBBA07003DDA48 /* Obj.cpp */; };
+		7DDCEB0C1286430C004794D2 /* Trackball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D39B0050EFBBA07003DDA48 /* Trackball.cpp */; };
+		7DDCEB0E1286430C004794D2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D39AFD90EFBB9BF003DDA48 /* GLUT.framework */; };
+		7DDCEB0F1286430C004794D2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D39AFDD0EFBB9CD003DDA48 /* OpenGL.framework */; };
+		7DDCEB101286430C004794D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D39AFE10EFBB9DB003DDA48 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7D39AFD30EFBB9A0003DDA48 /* refraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = refraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D39AFD90EFBB9BF003DDA48 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
+		7D39AFDD0EFBB9CD003DDA48 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		7D39AFE10EFBB9DB003DDA48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		7D39AFE50EFBB9F2003DDA48 /* aberration.frag */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = aberration.frag; sourceTree = "<group>"; };
+		7D39AFE60EFBB9F2003DDA48 /* aberration.vert */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = aberration.vert; sourceTree = "<group>"; };
+		7D39AFE70EFBB9F2003DDA48 /* Box.cpp */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.cpp.cpp; path = Box.cpp; sourceTree = "<group>"; };
+		7D39AFE80EFBB9F2003DDA48 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		7D39AFED0EFBBA07003DDA48 /* bunny.obj */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = bunny.obj; sourceTree = "<group>"; };
+		7D39AFEE0EFBBA07003DDA48 /* glsl.cpp */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.cpp.cpp; path = glsl.cpp; sourceTree = "<group>"; };
+		7D39AFEF0EFBBA07003DDA48 /* glsl.h */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.h; path = glsl.h; sourceTree = "<group>"; };
+		7D39AFF00EFBBA07003DDA48 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7D39AFF10EFBBA07003DDA48 /* Obj.cpp */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.cpp.cpp; path = Obj.cpp; sourceTree = "<group>"; };
+		7D39AFF20EFBBA07003DDA48 /* Obj.h */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.h; path = Obj.h; sourceTree = "<group>"; };
+		7D39AFF30EFBBA07003DDA48 /* reflect.frag */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = reflect.frag; sourceTree = "<group>"; };
+		7D39AFF40EFBBA07003DDA48 /* reflect.vert */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = reflect.vert; sourceTree = "<group>"; };
+		7D39AFF50EFBBA07003DDA48 /* refract.frag */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = refract.frag; sourceTree = "<group>"; };
+		7D39AFF60EFBBA07003DDA48 /* refract.vert */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = refract.vert; sourceTree = "<group>"; };
+		7D39AFF70EFBBA07003DDA48 /* replace.frag */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = replace.frag; sourceTree = "<group>"; };
+		7D39AFF80EFBBA07003DDA48 /* replace.vert */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = replace.vert; sourceTree = "<group>"; };
+		7D39AFFA0EFBBA07003DDA48 /* room3nx.raw */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = room3nx.raw; sourceTree = "<group>"; };
+		7D39AFFC0EFBBA07003DDA48 /* room3ny.raw */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = room3ny.raw; sourceTree = "<group>"; };
+		7D39AFFE0EFBBA07003DDA48 /* room3nz.raw */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = room3nz.raw; sourceTree = "<group>"; };
+		7D39B0000EFBBA07003DDA48 /* room3px.raw */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = room3px.raw; sourceTree = "<group>"; };
+		7D39B0020EFBBA07003DDA48 /* room3py.raw */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = room3py.raw; sourceTree = "<group>"; };
+		7D39B0040EFBBA07003DDA48 /* room3pz.raw */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = text; path = room3pz.raw; sourceTree = "<group>"; };
+		7D39B0050EFBBA07003DDA48 /* Trackball.cpp */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.cpp.cpp; path = Trackball.cpp; sourceTree = "<group>"; };
+		7D39B0060EFBBA07003DDA48 /* Trackball.h */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.h; path = Trackball.h; sourceTree = "<group>"; };
+		7DDCEB151286430C004794D2 /* Info-refraction_____________.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-refraction_____________.plist"; sourceTree = "<group>"; };
+		7DDCEB161286430C004794D2 /* refraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = refraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D39AFD00EFBB9A0003DDA48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D39AFDA0EFBB9BF003DDA48 /* GLUT.framework in Frameworks */,
+				7D39AFDE0EFBB9CD003DDA48 /* OpenGL.framework in Frameworks */,
+				7D39AFE20EFBB9DB003DDA48 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DDCEB0D1286430C004794D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DDCEB0E1286430C004794D2 /* GLUT.framework in Frameworks */,
+				7DDCEB0F1286430C004794D2 /* OpenGL.framework in Frameworks */,
+				7DDCEB101286430C004794D2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D39AFC00EFBB989003DDA48 = {
+			isa = PBXGroup;
+			children = (
+				7D39AFE10EFBB9DB003DDA48 /* Foundation.framework */,
+				7D39AFDD0EFBB9CD003DDA48 /* OpenGL.framework */,
+				7D39AFD90EFBB9BF003DDA48 /* GLUT.framework */,
+				7D39AFF00EFBBA07003DDA48 /* main.cpp */,
+				7D39AFE70EFBB9F2003DDA48 /* Box.cpp */,
+				7D39AFE80EFBB9F2003DDA48 /* Box.h */,
+				7D39AFF10EFBBA07003DDA48 /* Obj.cpp */,
+				7D39AFF20EFBBA07003DDA48 /* Obj.h */,
+				7D39B0050EFBBA07003DDA48 /* Trackball.cpp */,
+				7D39B0060EFBBA07003DDA48 /* Trackball.h */,
+				7D39AFEE0EFBBA07003DDA48 /* glsl.cpp */,
+				7D39AFEF0EFBBA07003DDA48 /* glsl.h */,
+				7D39AFE50EFBB9F2003DDA48 /* aberration.frag */,
+				7D39AFE60EFBB9F2003DDA48 /* aberration.vert */,
+				7D39AFF30EFBBA07003DDA48 /* reflect.frag */,
+				7D39AFF40EFBBA07003DDA48 /* reflect.vert */,
+				7D39AFF50EFBBA07003DDA48 /* refract.frag */,
+				7D39AFF60EFBBA07003DDA48 /* refract.vert */,
+				7D39AFF70EFBBA07003DDA48 /* replace.frag */,
+				7D39AFF80EFBBA07003DDA48 /* replace.vert */,
+				7D39AFED0EFBBA07003DDA48 /* bunny.obj */,
+				7D39AFFA0EFBBA07003DDA48 /* room3nx.raw */,
+				7D39AFFC0EFBBA07003DDA48 /* room3ny.raw */,
+				7D39AFFE0EFBBA07003DDA48 /* room3nz.raw */,
+				7D39B0000EFBBA07003DDA48 /* room3px.raw */,
+				7D39B0020EFBBA07003DDA48 /* room3py.raw */,
+				7D39B0040EFBBA07003DDA48 /* room3pz.raw */,
+				7D39AFD40EFBB9A0003DDA48 /* Products */,
+				7DDCEB151286430C004794D2 /* Info-refraction_____________.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		7D39AFD40EFBB9A0003DDA48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D39AFD30EFBB9A0003DDA48 /* refraction.app */,
+				7DDCEB161286430C004794D2 /* refraction.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7D39AFCD0EFBB9A0003DDA48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D39AFEC0EFBB9F2003DDA48 /* Box.h in Headers */,
+				7D39B0090EFBBA07003DDA48 /* glsl.h in Headers */,
+				7D39B00C0EFBBA07003DDA48 /* Obj.h in Headers */,
+				7D39B0200EFBBA07003DDA48 /* Trackball.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DDCEAF21286430C004794D2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DDCEAF31286430C004794D2 /* Box.h in Headers */,
+				7DDCEAF41286430C004794D2 /* glsl.h in Headers */,
+				7DDCEAF51286430C004794D2 /* Obj.h in Headers */,
+				7DDCEAF61286430C004794D2 /* Trackball.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7DDCEAF11286430C004794D2 /* refraction（アップグレードしました） */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DDCEB121286430C004794D2 /* Build configuration list for PBXNativeTarget "refraction（アップグレードしました）" */;
+			buildPhases = (
+				7DDCEAF21286430C004794D2 /* Headers */,
+				7DDCEAF71286430C004794D2 /* Resources */,
+				7DDCEB071286430C004794D2 /* Sources */,
+				7DDCEB0D1286430C004794D2 /* Frameworks */,
+				7DDCEB111286430C004794D2 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "refraction（アップグレードしました）";
+			productInstallPath = "$(USER_APPS_DIR)";
+			productName = refraction;
+			productReference = 7DDCEB161286430C004794D2 /* refraction.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D39AFC20EFBB989003DDA48 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 7D39AFC30EFBB989003DDA48 /* Build configuration list for PBXProject "refraction" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 7D39AFC00EFBB989003DDA48;
+			productRefGroup = 7D39AFD40EFBB9A0003DDA48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DDCEAF11286430C004794D2 /* refraction（アップグレードしました） */,
+				7D39AFD20EFBB9A0003DDA48 /* refraction */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D39AFCE0EFBB9A0003DDA48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D39AFE90EFBB9F2003DDA48 /* aberration.frag in Resources */,
+				7D39AFEA0EFBB9F2003DDA48 /* aberration.vert in Resources */,
+				7D39B0070EFBBA07003DDA48 /* bunny.obj in Resources */,
+				7D39B00D0EFBBA07003DDA48 /* reflect.frag in Resources */,
+				7D39B00E0EFBBA07003DDA48 /* reflect.vert in Resources */,
+				7D39B00F0EFBBA07003DDA48 /* refract.frag in Resources */,
+				7D39B0100EFBBA07003DDA48 /* refract.vert in Resources */,
+				7D39B0110EFBBA07003DDA48 /* replace.frag in Resources */,
+				7D39B0120EFBBA07003DDA48 /* replace.vert in Resources */,
+				7D39B0140EFBBA07003DDA48 /* room3nx.raw in Resources */,
+				7D39B0160EFBBA07003DDA48 /* room3ny.raw in Resources */,
+				7D39B0180EFBBA07003DDA48 /* room3nz.raw in Resources */,
+				7D39B01A0EFBBA07003DDA48 /* room3px.raw in Resources */,
+				7D39B01C0EFBBA07003DDA48 /* room3py.raw in Resources */,
+				7D39B01E0EFBBA07003DDA48 /* room3pz.raw in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DDCEAF71286430C004794D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DDCEAF81286430C004794D2 /* aberration.frag in Resources */,
+				7DDCEAF91286430C004794D2 /* aberration.vert in Resources */,
+				7DDCEAFA1286430C004794D2 /* bunny.obj in Resources */,
+				7DDCEAFB1286430C004794D2 /* reflect.frag in Resources */,
+				7DDCEAFC1286430C004794D2 /* reflect.vert in Resources */,
+				7DDCEAFD1286430C004794D2 /* refract.frag in Resources */,
+				7DDCEAFE1286430C004794D2 /* refract.vert in Resources */,
+				7DDCEAFF1286430C004794D2 /* replace.frag in Resources */,
+				7DDCEB001286430C004794D2 /* replace.vert in Resources */,
+				7DDCEB011286430C004794D2 /* room3nx.raw in Resources */,
+				7DDCEB021286430C004794D2 /* room3ny.raw in Resources */,
+				7DDCEB031286430C004794D2 /* room3nz.raw in Resources */,
+				7DDCEB041286430C004794D2 /* room3px.raw in Resources */,
+				7DDCEB051286430C004794D2 /* room3py.raw in Resources */,
+				7DDCEB061286430C004794D2 /* room3pz.raw in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		7D39AFD10EFBB9A0003DDA48 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DDCEB111286430C004794D2 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D39AFCF0EFBB9A0003DDA48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D39AFEB0EFBB9F2003DDA48 /* Box.cpp in Sources */,
+				7D39B0080EFBBA07003DDA48 /* glsl.cpp in Sources */,
+				7D39B00A0EFBBA07003DDA48 /* main.cpp in Sources */,
+				7D39B00B0EFBBA07003DDA48 /* Obj.cpp in Sources */,
+				7D39B01F0EFBBA07003DDA48 /* Trackball.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DDCEB071286430C004794D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DDCEB081286430C004794D2 /* Box.cpp in Sources */,
+				7DDCEB091286430C004794D2 /* glsl.cpp in Sources */,
+				7DDCEB0A1286430C004794D2 /* main.cpp in Sources */,
+				7DDCEB0B1286430C004794D2 /* Obj.cpp in Sources */,
+				7DDCEB0C1286430C004794D2 /* Trackball.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7D39AFC40EFBB989003DDA48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		7D39AFC50EFBB989003DDA48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		7D39AFD70EFBB9A1003DDA48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = refraction;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7D39AFD80EFBB9A1003DDA48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = refraction;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		7DDCEB131286430C004794D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "Info-refraction_____________.plist";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = refraction;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7DDCEB141286430C004794D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = "Info-refraction_____________.plist";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = refraction;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D39AFC30EFBB989003DDA48 /* Build configuration list for PBXProject "refraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D39AFC40EFBB989003DDA48 /* Debug */,
+				7D39AFC50EFBB989003DDA48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D39AFD60EFBB9A1003DDA48 /* Build configuration list for PBXApplicationTarget "refraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D39AFD70EFBB9A1003DDA48 /* Debug */,
+				7D39AFD80EFBB9A1003DDA48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DDCEB121286430C004794D2 /* Build configuration list for PBXNativeTarget "refraction（アップグレードしました）" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DDCEB131286430C004794D2 /* Debug */,
+				7DDCEB141286430C004794D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D39AFC20EFBB989003DDA48 /* Project object */;
+}
