@@ -1,1 +1,25 @@
-// aberratoion.vertvarying vec3 r;   // 視線の反射ベクトルvarying vec3 s_r; // 視線の赤方向の屈折ベクトルvarying vec3 s_g; // 視線の緑方向の屈折ベクトルvarying vec3 s_b; // 視線の青方向の屈折ベクトルvarying float t;  // 境界面での反射率const float eta_r = 0.69;  // 赤の屈折率の比const float eta_g = 0.67;  // 緑の屈折率の比const float eta_b = 0.65;  // 青の屈折率の比const float f = (1.0 - eta_g) * (1.0 - eta_g) / ((1.0 + eta_g) * (1.0 + eta_g));void main(void){  vec4 p = gl_ModelViewMatrix * gl_Vertex;  // 頂点位置  vec3 v = normalize(p.xyz / p.w);          // 視線ベクトル  vec3 n = gl_NormalMatrix * gl_Normal;     // 法線ベクトル  r = vec3(gl_TextureMatrix[0] * vec4(reflect(v, n), 1.0));  s_r = vec3(gl_TextureMatrix[0] * vec4(refract(v, n, eta_r), 1.0));  s_g = vec3(gl_TextureMatrix[0] * vec4(refract(v, n, eta_g), 1.0));  s_b = vec3(gl_TextureMatrix[0] * vec4(refract(v, n, eta_b), 1.0));  t = f + (1.0 - f) * pow(1.0 - dot(-v, n), 5.0);  gl_Position = ftransform();}
+// aberratoion.vert
+
+varying vec3 r;   // 視線の反射ベクトル
+varying vec3 s_r; // 視線の赤方向の屈折ベクトル
+varying vec3 s_g; // 視線の緑方向の屈折ベクトル
+varying vec3 s_b; // 視線の青方向の屈折ベクトル
+varying float t;  // 境界面での反射率
+
+const float eta_r = 0.69;  // 赤の屈折率の比
+const float eta_g = 0.67;  // 緑の屈折率の比
+const float eta_b = 0.65;  // 青の屈折率の比
+const float f = (1.0 - eta_g) * (1.0 - eta_g) / ((1.0 + eta_g) * (1.0 + eta_g));
+
+void main(void)
+{
+  vec4 p = gl_ModelViewMatrix * gl_Vertex;  // 頂点位置
+  vec3 v = normalize(p.xyz / p.w);          // 視線ベクトル
+  vec3 n = gl_NormalMatrix * gl_Normal;     // 法線ベクトル
+  r = vec3(gl_TextureMatrix[0] * vec4(reflect(v, n), 1.0));
+  s_r = vec3(gl_TextureMatrix[0] * vec4(refract(v, n, eta_r), 1.0));
+  s_g = vec3(gl_TextureMatrix[0] * vec4(refract(v, n, eta_g), 1.0));
+  s_b = vec3(gl_TextureMatrix[0] * vec4(refract(v, n, eta_b), 1.0));
+  t = f + (1.0 - f) * pow(1.0 - dot(-v, n), 5.0);
+  gl_Position = ftransform();
+}
