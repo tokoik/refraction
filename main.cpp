@@ -3,29 +3,19 @@
 #include <cstdlib>
 #include <cmath>
 
-#if defined(WIN32)
-//#  pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
-#  include "glut.h"
-#  include "glext.h"
-PFNGLLOADTRANSPOSEMATRIXDPROC glLoadTransposeMatrixd;
-#elif defined(__APPLE__) || defined(MACOSX)
-#  include <GLUT/glut.h>
-#else
-#  define GL_GLEXT_PROTOTYPES
-#  include <GL/glut.h>
-#endif
+#include "gg.h"
+using namespace gg;
 
 /*
 ** シェーダオブジェクト
 */
-#include "glsl.h"
 static GLuint shader1, shader2;
+static GLint textureLoc, cubemapLoc;
 
 /*
 **トラックボール処理
 */
-#include "Trackball.h"
-static Trackball *tb1, *tb2;
+static GgTrackball *tb1, *tb2;
 static int btn = -1;
 
 /*
@@ -37,8 +27,9 @@ static Box *box;
 /*
 ** OBJ ファイル
 */
-#include "Obj.h"
-static Obj *obj;
+static GLuint nv, nf;
+static GLfloat (*vert)[3], (*norm)[3];
+static GLuint (*face)[3];
 
 /*
 ** テクスチャ
@@ -64,76 +55,22 @@ static const int target[] = {                /* テクスチャのターゲット名 */
 };
 
 /*
-** シェーダプログラムの作成
-*/
-static GLuint loadShader(const char *vert, const char *frag)
-{
-  /* シェーダオブジェクトの作成 */
-  GLuint vertShader = glCreateShader(GL_VERTEX_SHADER);
-  GLuint fragShader = glCreateShader(GL_FRAGMENT_SHADER);
-  
-  /* シェーダのソースプログラムの読み込み */
-  if (readShaderSource(vertShader, vert)) exit(1);
-  if (readShaderSource(fragShader, frag)) exit(1);
-  
-  /* シェーダプログラムのコンパイル／リンク結果を得る変数 */
-  GLint compiled, linked;
-
-  /* バーテックスシェーダのソースプログラムのコンパイル */
-  glCompileShader(vertShader);
-  glGetShaderiv(vertShader, GL_COMPILE_STATUS, &compiled);
-  printShaderInfoLog(vertShader);
-  if (compiled == GL_FALSE) {
-    std::cerr << "Compile error in vertex shader." << std::endl;
-    exit(1);
-  }
-  
-  /* フラグメントシェーダのソースプログラムのコンパイル */
-  glCompileShader(fragShader);
-  glGetShaderiv(fragShader, GL_COMPILE_STATUS, &compiled);
-  printShaderInfoLog(fragShader);
-  if (compiled == GL_FALSE) {
-    std::cerr << "Compile error in fragment shader." << std::endl;
-    exit(1);
-  }
-  
-  /* プログラムオブジェクトの作成 */
-  GLuint gl2Program = glCreateProgram();
-  
-  /* シェーダオブジェクトのシェーダプログラムへの登録 */
-  glAttachShader(gl2Program, vertShader);
-  glAttachShader(gl2Program, fragShader);
-  
-  /* シェーダオブジェクトの削除 */
-  glDeleteShader(vertShader);
-  glDeleteShader(fragShader);
-  
-  /* シェーダプログラムのリンク */
-  glLinkProgram(gl2Program);
-  glGetProgramiv(gl2Program, GL_LINK_STATUS, &linked);
-  printProgramInfoLog(gl2Program);
-  if (linked == GL_FALSE) {
-    std::cerr << "Link error" << std::endl;
-    exit(1);
-  }
-
-  return gl2Program;
-}
-
-/*
 ** 初期化
 */
 static void init(void)
 {
+  /* OpenGL 拡張機能の初期化ほか */
+  ggInit();
+
+  /* OBJ ファイルの読み込み */
+  ggLoadObj("bunny.obj", nv, vert, norm, nf, face, false);
+
   /* 箱のオブジェクトを生成 */
   box = new Box(500.0f, 500.0f, 500.0f);
 
-  /* OBJ ファイルの読み込み */
-  obj = new Obj("bunny.obj");
-
   /* トラックボール処理用オブジェクトの生成 */
-  tb1 = new Trackball;
-  tb2 = new Trackball;
+  tb1 = new GgTrackball;
+  tb2 = new GgTrackball;
 
   /* テクスチャ名を２個生成 */
   glGenTextures(2, texname);
@@ -193,26 +130,18 @@ static void init(void)
   /* 設定対象を無名テクスチャに戻す */
   glBindTexture(GL_TEXTURE_2D, 0);
   
-  /* GLSL の初期化 */
-  if (glslInit()) exit(1);
-
   /* シェーダプログラムの作成 */
-  shader1 = loadShader("replace.vert", "replace.frag");
-  shader2 = loadShader("refract.vert", "refract.frag");
+  shader1 = ggLoadShader("replace.vert", "replace.frag");
+  shader2 = ggLoadShader("refract.vert", "refract.frag");
   
-  /* テクスチャユニット０を指定する */
-  glUniform1i(glGetUniformLocation(shader1, "texture"), 0);
-  glUniform1i(glGetUniformLocation(shader2, "cubemap"), 0);
+  /* テクスチャユニット */
+  textureLoc = glGetUniformLocation(shader1, "texture");
+  cubemapLoc = glGetUniformLocation(shader2, "cubemap");
 
   /* 初期設定 */
-  glClearColor(0.3, 0.3, 1.0, 0.0);
+  glClearColor(0.3f, 0.3f, 1.0f, 0.0f);
   glEnable(GL_DEPTH_TEST);
   glDisable(GL_CULL_FACE);
-  
-#if defined(WIN32)
-  glLoadTransposeMatrixd =
-    (PFNGLLOADTRANSPOSEMATRIXDPROC)wglGetProcAddress("glLoadTransposeMatrixd");
-#endif
 }
 
 /*
@@ -225,10 +154,11 @@ static void scene(void)
   
   /* 箱のテクスチャのシェーダプログラムを適用する */
   glUseProgram(shader1);
+  glUniform1i(textureLoc, 0);
 
   /* 箱を描く */
   glPushMatrix();
-  glMultMatrixd(tb2->rotation());
+  glMultMatrixf(tb2->get());
   box->draw();
   glPopMatrix();
 
@@ -237,17 +167,33 @@ static void scene(void)
 
   /* キューブマッピングのシェーダプログラムを適用する */
   glUseProgram(shader2);
+  glUniform1i(cubemapLoc, 0);
 
   /* テクスチャ変換行列にトラックボール式の回転を加える */
   glMatrixMode(GL_TEXTURE);
-  glLoadTransposeMatrixd(tb2->rotation());
+  glLoadTransposeMatrixf(tb2->get());
   glMatrixMode(GL_MODELVIEW);
 
   /* 視点より少し奥にオブジェクトを描いてトラックボール式の回転を加える */
   glPushMatrix();
   glTranslated(0.0, 0.0, -200.0);
-  glMultMatrixd(tb1->rotation());
-  obj->draw();
+  glMultMatrixf(tb1->get());
+
+  /* 頂点データ，法線データ，テクスチャ座標の配列を有効にする */
+  glEnableClientState(GL_VERTEX_ARRAY);
+  glEnableClientState(GL_NORMAL_ARRAY);
+  
+  /* 頂点データ，法線データ，テクスチャ座標の場所を指定する */
+  glNormalPointer(GL_FLOAT, 0, norm);
+  glVertexPointer(3, GL_FLOAT, 0, vert);
+  
+  /* 頂点のインデックスの場所を指定して図形を描画する */
+  glDrawElements(GL_TRIANGLES, nf * 3, GL_UNSIGNED_INT, face);
+
+  /* 頂点データ，法線データ，テクスチャ座標の配列を無効にする */
+  glDisableClientState(GL_VERTEX_ARRAY);
+  glDisableClientState(GL_NORMAL_ARRAY);
+
   glPopMatrix();
   
   /* テクスチャ変換行列を元に戻す */
