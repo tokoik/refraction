@@ -38,12 +38,12 @@ static GLuint (*face)[3];
 #define TEXHEIGHT 256                           /* テクスチャの高さ　　 */
 static GLuint texname[2];                       /* テクスチャ名（番号） */
 static const char *texfile[] = {                /* テクスチャファイル名 */
-  "room3ny.raw", /* 下 */
-  "room3nz.raw", /* 裏 */
-  "room3px.raw", /* 右 */
-  "room3pz.raw", /* 前 */
-  "room3nx.raw", /* 左 */
-  "room3py.raw", /* 上 */
+  "room3ny.tga", /* 下 */
+  "room3nz.tga", /* 裏 */
+  "room3px.tga", /* 右 */
+  "room3pz.tga", /* 前 */
+  "room3nx.tga", /* 左 */
+  "room3py.tga", /* 上 */
 };
 static const int target[] = {                /* テクスチャのターゲット名 */
   GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,
@@ -85,23 +85,20 @@ static void init(void)
   
   /* テクスチャ画像の読み込み */
   for (int i = 0; i < 6; ++i) {
-    std::ifstream file;
+    GLsizei width, height;
+    GLenum format;
+    GLubyte *image = ggLoadTga(texfile[i], width, height, format);
 
-    file.open(texfile[i], std::ios::binary);
-    if (file) {
-      GLubyte image[TEXHEIGHT * TEXWIDTH * 4]; // テクスチャ画像の読み込み用
-
-      file.read(reinterpret_cast<char *>(image), sizeof image);
-      file.close();
+    if (image) {
 
       /* 外側の立方体のテクスチャの置き換え */
-      glTexSubImage2D(GL_TEXTURE_2D, 0, TEXWIDTH * i, 0, TEXWIDTH, TEXHEIGHT,
-        GL_RGBA, GL_UNSIGNED_BYTE, image);
+      glTexSubImage2D(GL_TEXTURE_2D, 0, TEXWIDTH * i, 0, TEXWIDTH, TEXWIDTH,
+        format, GL_UNSIGNED_BYTE, image);
 
       /* キューブマッピングのテクスチャの割り当て */
       glBindTexture(GL_TEXTURE_CUBE_MAP, texname[1]);
-      glTexImage2D(target[i], 0, GL_RGBA, TEXWIDTH, TEXHEIGHT, 0, 
-        GL_RGBA, GL_UNSIGNED_BYTE, image);
+      glTexImage2D(target[i], 0, GL_RGBA, TEXWIDTH, TEXWIDTH, 0, 
+        format, GL_UNSIGNED_BYTE, image);
 
       /* 設定対象を外側の立方体のテクスチャに戻す */
       glBindTexture(GL_TEXTURE_2D, texname[0]);

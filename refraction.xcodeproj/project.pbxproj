@@ -1,0 +1,276 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D25127516EC8C680015E163 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D25127116EC8C680015E163 /* Box.cpp */; };
+		7D25127A16EC8C7D0015E163 /* gg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D25127816EC8C7D0015E163 /* gg.cpp */; };
+		7D25127C16EC8C930015E163 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D25127B16EC8C930015E163 /* main.cpp */; };
+		7D7AF85F1222C8CC003A0434 /* opengl.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AF85E1222C8CC003A0434 /* opengl.icns */; };
+		7D7AFEE716EC916F0016A652 /* bunny.obj in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFED216EC8F920016A652 /* bunny.obj */; };
+		7D7AFEEA16EC916F0016A652 /* reflect.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFED316EC8FA60016A652 /* reflect.frag */; };
+		7D7AFEEB16EC916F0016A652 /* reflect.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFED416EC8FA60016A652 /* reflect.vert */; };
+		7D7AFEEC16EC916F0016A652 /* refract.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFED516EC8FA60016A652 /* refract.frag */; };
+		7D7AFEED16EC916F0016A652 /* refract.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFED616EC8FA60016A652 /* refract.vert */; };
+		7D7AFEEE16EC916F0016A652 /* room3nx.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFEDD16EC8FD40016A652 /* room3nx.tga */; };
+		7D7AFEEF16EC916F0016A652 /* room3ny.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFEDE16EC8FD40016A652 /* room3ny.tga */; };
+		7D7AFEF016EC916F0016A652 /* room3nz.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFEDF16EC8FD40016A652 /* room3nz.tga */; };
+		7D7AFEF116EC916F0016A652 /* room3px.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFEE016EC8FD40016A652 /* room3px.tga */; };
+		7D7AFEF216EC916F0016A652 /* room3py.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFEE116EC8FD40016A652 /* room3py.tga */; };
+		7D7AFEF316EC916F0016A652 /* room3pz.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFEE216EC8FD40016A652 /* room3pz.tga */; };
+		7D7AFF6816EC9F290016A652 /* aberration.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFF5A16EC9E9D0016A652 /* aberration.frag */; };
+		7D7AFF6916EC9F290016A652 /* aberration.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFF5B16EC9E9D0016A652 /* aberration.vert */; };
+		7D7AFF7416EC9F9C0016A652 /* replace.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFF7216EC9F8B0016A652 /* replace.frag */; };
+		7D7AFF7516EC9F9C0016A652 /* replace.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AFF7316EC9F8B0016A652 /* replace.vert */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7D1E90EE1123E36C005E6C75 /* refraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = refraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1E90F11123E36C005E6C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D25127116EC8C680015E163 /* Box.cpp */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.cpp.cpp; path = Box.cpp; sourceTree = "<group>"; };
+		7D25127216EC8C680015E163 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		7D25127816EC8C7D0015E163 /* gg.cpp */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.cpp.cpp; path = gg.cpp; sourceTree = "<group>"; };
+		7D25127916EC8C7D0015E163 /* gg.h */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.c.h; path = gg.h; sourceTree = "<group>"; };
+		7D25127B16EC8C930015E163 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7D7AF85E1222C8CC003A0434 /* opengl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = opengl.icns; sourceTree = "<group>"; };
+		7D7AFED216EC8F920016A652 /* bunny.obj */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = text; path = bunny.obj; sourceTree = "<group>"; };
+		7D7AFED316EC8FA60016A652 /* reflect.frag */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.glsl; path = reflect.frag; sourceTree = "<group>"; };
+		7D7AFED416EC8FA60016A652 /* reflect.vert */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.glsl; path = reflect.vert; sourceTree = "<group>"; };
+		7D7AFED516EC8FA60016A652 /* refract.frag */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.glsl; path = refract.frag; sourceTree = "<group>"; };
+		7D7AFED616EC8FA60016A652 /* refract.vert */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.glsl; path = refract.vert; sourceTree = "<group>"; };
+		7D7AFEDD16EC8FD40016A652 /* room3nx.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = room3nx.tga; sourceTree = "<group>"; };
+		7D7AFEDE16EC8FD40016A652 /* room3ny.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = room3ny.tga; sourceTree = "<group>"; };
+		7D7AFEDF16EC8FD40016A652 /* room3nz.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = room3nz.tga; sourceTree = "<group>"; };
+		7D7AFEE016EC8FD40016A652 /* room3px.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = room3px.tga; sourceTree = "<group>"; };
+		7D7AFEE116EC8FD40016A652 /* room3py.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = room3py.tga; sourceTree = "<group>"; };
+		7D7AFEE216EC8FD40016A652 /* room3pz.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = room3pz.tga; sourceTree = "<group>"; };
+		7D7AFF5A16EC9E9D0016A652 /* aberration.frag */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.glsl; path = aberration.frag; sourceTree = "<group>"; };
+		7D7AFF5B16EC9E9D0016A652 /* aberration.vert */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.glsl; path = aberration.vert; sourceTree = "<group>"; };
+		7D7AFF7216EC9F8B0016A652 /* replace.frag */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.glsl; path = replace.frag; sourceTree = "<group>"; };
+		7D7AFF7316EC9F8B0016A652 /* replace.vert */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = sourcecode.glsl; path = replace.vert; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D1E90EC1123E36C005E6C75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D1E90D81123E2F7005E6C75 = {
+			isa = PBXGroup;
+			children = (
+				7D25127B16EC8C930015E163 /* main.cpp */,
+				7D25127216EC8C680015E163 /* Box.h */,
+				7D25127116EC8C680015E163 /* Box.cpp */,
+				7D25127916EC8C7D0015E163 /* gg.h */,
+				7D25127816EC8C7D0015E163 /* gg.cpp */,
+				7D7AFED216EC8F920016A652 /* bunny.obj */,
+				7D7AFF5A16EC9E9D0016A652 /* aberration.frag */,
+				7D7AFF5B16EC9E9D0016A652 /* aberration.vert */,
+				7D7AFED316EC8FA60016A652 /* reflect.frag */,
+				7D7AFED416EC8FA60016A652 /* reflect.vert */,
+				7D7AFED516EC8FA60016A652 /* refract.frag */,
+				7D7AFED616EC8FA60016A652 /* refract.vert */,
+				7D7AFF7216EC9F8B0016A652 /* replace.frag */,
+				7D7AFF7316EC9F8B0016A652 /* replace.vert */,
+				7D7AFEDD16EC8FD40016A652 /* room3nx.tga */,
+				7D7AFEDE16EC8FD40016A652 /* room3ny.tga */,
+				7D7AFEDF16EC8FD40016A652 /* room3nz.tga */,
+				7D7AFEE016EC8FD40016A652 /* room3px.tga */,
+				7D7AFEE116EC8FD40016A652 /* room3py.tga */,
+				7D7AFEE216EC8FD40016A652 /* room3pz.tga */,
+				7D1E90EF1123E36C005E6C75 /* Products */,
+				7D1E90F11123E36C005E6C75 /* Info.plist */,
+				7D7AF85E1222C8CC003A0434 /* opengl.icns */,
+			);
+			sourceTree = "<group>";
+		};
+		7D1E90EF1123E36C005E6C75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D1E90EE1123E36C005E6C75 /* refraction.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D1E90ED1123E36C005E6C75 /* refraction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1E90F41123E36D005E6C75 /* Build configuration list for PBXNativeTarget "refraction" */;
+			buildPhases = (
+				7D1E90EA1123E36C005E6C75 /* Resources */,
+				7D1E90EB1123E36C005E6C75 /* Sources */,
+				7D1E90EC1123E36C005E6C75 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = refraction;
+			productName = refraction;
+			productReference = 7D1E90EE1123E36C005E6C75 /* refraction.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D1E90DA1123E2F7005E6C75 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 7D1E90DD1123E2F7005E6C75 /* Build configuration list for PBXProject "refraction" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 7D1E90D81123E2F7005E6C75;
+			productRefGroup = 7D1E90EF1123E36C005E6C75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D1E90ED1123E36C005E6C75 /* refraction */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D1E90EA1123E36C005E6C75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7AFEE716EC916F0016A652 /* bunny.obj in Resources */,
+				7D7AFF6816EC9F290016A652 /* aberration.frag in Resources */,
+				7D7AFF6916EC9F290016A652 /* aberration.vert in Resources */,
+				7D7AFEEA16EC916F0016A652 /* reflect.frag in Resources */,
+				7D7AFEEB16EC916F0016A652 /* reflect.vert in Resources */,
+				7D7AFEEC16EC916F0016A652 /* refract.frag in Resources */,
+				7D7AFEED16EC916F0016A652 /* refract.vert in Resources */,
+				7D7AFF7416EC9F9C0016A652 /* replace.frag in Resources */,
+				7D7AFF7516EC9F9C0016A652 /* replace.vert in Resources */,
+				7D7AFEEE16EC916F0016A652 /* room3nx.tga in Resources */,
+				7D7AFEEF16EC916F0016A652 /* room3ny.tga in Resources */,
+				7D7AFEF016EC916F0016A652 /* room3nz.tga in Resources */,
+				7D7AFEF116EC916F0016A652 /* room3px.tga in Resources */,
+				7D7AFEF216EC916F0016A652 /* room3py.tga in Resources */,
+				7D7AFEF316EC916F0016A652 /* room3pz.tga in Resources */,
+				7D7AF85F1222C8CC003A0434 /* opengl.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D1E90EB1123E36C005E6C75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D25127516EC8C680015E163 /* Box.cpp in Sources */,
+				7D25127A16EC8C7D0015E163 /* gg.cpp in Sources */,
+				7D25127C16EC8C930015E163 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7D1E90DB1123E2F7005E6C75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		7D1E90DC1123E2F7005E6C75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		7D1E90F21123E36D005E6C75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					GLUT,
+					"-framework",
+					OpenGL,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = refraction;
+			};
+			name = Debug;
+		};
+		7D1E90F31123E36D005E6C75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					GLUT,
+					"-framework",
+					OpenGL,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = refraction;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D1E90DD1123E2F7005E6C75 /* Build configuration list for PBXProject "refraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1E90DB1123E2F7005E6C75 /* Debug */,
+				7D1E90DC1123E2F7005E6C75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1E90F41123E36D005E6C75 /* Build configuration list for PBXNativeTarget "refraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1E90F21123E36D005E6C75 /* Debug */,
+				7D1E90F31123E36D005E6C75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D1E90DA1123E2F7005E6C75 /* Project object */;
+}
