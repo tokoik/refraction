@@ -156,7 +156,7 @@ static void scene(void)
   /* 箱を描く */
   glPushMatrix();
   glMultMatrixf(tb2->get());
-  box->draw();
+  //box->draw();
   glPopMatrix();
 
   /* 設定対象をキューブマッピングのテクスチャに切り替える*/
