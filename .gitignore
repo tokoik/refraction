@@ -30,7 +30,6 @@ Thumbs.db
 !glew32.lib
 *.ncb
 *.suo
-*.v11.suo
 *.vcproj.*.*.user
 *.sdf
 *.opensdf
