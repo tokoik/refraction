@@ -128,7 +128,7 @@
 		7D1E90DA1123E2F7005E6C75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = 7D1E90DD1123E2F7005E6C75 /* Build configuration list for PBXProject "refraction" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -194,7 +194,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
 				RESOURCES_TARGETED_DEVICE_FAMILY = "";
 			};
 			name = Debug;
@@ -228,6 +230,7 @@
 					"-framework",
 					OpenGL,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = refraction;
 			};
 			name = Debug;
@@ -251,6 +254,7 @@
 					"-framework",
 					OpenGL,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.${PRODUCT_NAME:identifier}";
 				PRODUCT_NAME = refraction;
 				ZERO_LINK = NO;
 			};

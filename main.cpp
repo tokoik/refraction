@@ -316,6 +316,7 @@ int main(int argc, char *argv[])
 {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
+  glutInitWindowSize(1280, 800);
   glutCreateWindow(argv[0]);
   glutDisplayFunc(display);
   glutReshapeFunc(resize);
