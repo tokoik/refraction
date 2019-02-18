@@ -42,6 +42,7 @@
     <None Include="refract.vert">
       <Filter>シェーダー ファイル</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp">

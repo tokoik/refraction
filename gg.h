@@ -31,10 +31,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #if defined(WIN32)
 //#  pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
 #  pragma warning(disable:4996)
-#  pragma comment(lib, "glew32.lib")
-#  include "glew.h"
-#  include "wglew.h"
-#  include "glut.h"
+#  include <GL/glew.h>
+#  include <GL/wglew.h>
+#  include <GL/glut.h>
 #elif defined(__APPLE__)
 #  define GL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED
 #  include <OpenGL/OpenGL.h>
